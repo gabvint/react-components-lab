@@ -8,6 +8,8 @@ const WeatherForecasts = ({ forecasts }) => {
         <section>
             {forecasts.map((weather, index) => (
                 <div className="weather" key={index}>
+
+                
                     < WeatherIcon  img={weather.img} imgAlt={weather.imgAlt} />
                     < WeatherData day={weather.day} conditions={weather.conditions} time={weather.time} />
                 </div>
