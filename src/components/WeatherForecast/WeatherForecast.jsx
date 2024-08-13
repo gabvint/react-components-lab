@@ -1,14 +1,19 @@
 import './WeatherForecast.css';
+import WeatherData from './WeatherData.jsx'
+import WeatherIcon from './WeatherIcon.jsx'
 
-const WeatherForecasts = (props) => {
-    const { weather } = props
+const WeatherForecasts = ({ forecasts }) => {
+  
     return (
-        <div className="weather">
-            <h2>Day of the Week</h2>
-            <img src="" alt="" />
-            <p><span>conditions: </span>{weather.conditions}</p>
-            <p><span>time: </span>{weather.time}</p>
-        </div>
+        <section>
+            {forecasts.map((weather, index) => (
+                <div className="weather" key={index}>
+                    < WeatherIcon  img={weather.img} imgAlt={weather.imgAlt} />
+                    < WeatherData day={weather.day} conditions={weather.conditions} time={weather.time} />
+                </div>
+            ))}
+
+        </section>
 
     )
 }
